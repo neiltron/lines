@@ -8,7 +8,7 @@ let font;
 const preload = p5 => {
   // You can use p5.loadImage() here, etc...
 
-  font = p5.loadFont('./assets/font/Supply-Regular.otf');
+  font = p5.loadFont('/assets/font/Supply-Regular.otf');
 };
 
 const settings = {
