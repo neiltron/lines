@@ -126,6 +126,8 @@ canvasSketch(() => {
       }
 
       for (let i = 0; i < lines.length; i++) {
+        if (!lines[i]) { return; }
+
         p5.line(
           lines[i][0][0],
           lines[i][0][1],
@@ -178,6 +180,7 @@ function setupLines() {
 
 function isOverlapping(line, points) {
   let _isOverlapping = false;
+  let _lineB;
 
     for (let i = 0; i < points.length - 1; i++) {
       _lineB = [
@@ -220,7 +223,7 @@ function createLine(outerPoint, lineIndex) {
   let innerPoint = innerPoints[Math.floor(Math.random() * innerPointTotal)];
 
   let redraws = 0;
-  passing = true;
+  let passing = true;
 
   while (isOverlapping([outerPoint, innerPoint], innerPoints)) {
     innerPoint = innerPoints[Math.floor(Math.random() * innerPointTotal)];
